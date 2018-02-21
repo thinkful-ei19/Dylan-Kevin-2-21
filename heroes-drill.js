@@ -9,14 +9,21 @@ const heroes = [
 ];
 
 function findOne( arr, query ) {
-  if ( query.id !== undefined && query.name === undefined && query.squad === undefined ) {
-    return arr.find(val => val.id === query.id);
-  } else if ( query.id !== undefined && query.name !== undefined && query.squad === undefined ) {
-    return arr.find(val => val.id === query.id && val.name === query.name);
-  } else if ( query.id !== undefined && query.name !== undefined && query.squad !== undefined ) {
-    return arr.find(val => val.id === query.id && val.name === query.name && val.squad === query.squad);
+  let result;
+  if ( query.id && query.name && query.squad ) {
+    result = arr.find(val => val.id === query.id && val.name === query.name && val.squad === query.squad);
+  } else if ( query.id && query.name && !(query.squad) ) {
+    result = arr.find(val => val.id === query.id && val.name === query.name);
+  } else if ( query.id && !(query.name) && !(query.squad) ) {
+    result = arr.find(val => val.id === query.id);
+  }
+  
+  if (result === undefined) {
+    return null;
+  } else {
+    return result;
   }
 }
 
-let findHero = findOne( heroes, { id: 4, name: 'Superman' });
+let findHero = findOne( heroes, { id: 4, name: 'Superman', squad: 'Justice League' });
 console.log(findHero);
