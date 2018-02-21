@@ -31,6 +31,6 @@ const Database = {
     }
 };
 
-const test = Database.findOne({ id: 1, name: 'Hulk' });
-console.log(test);
+const test1 = Database.findOne({ id: 1, name: 'Hulk' });
+console.log(test1);
 
