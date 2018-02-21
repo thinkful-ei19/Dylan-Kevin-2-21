@@ -9,13 +9,14 @@ const heroes = [
 ];
 
 function findOne( arr, query ) {
-  for (let i = 0; i < arr.length; i++) {
-    if (query.id === arr[i].id) {
-      return arr[i];
-    } 
+  if ( query.id !== undefined && query.name === undefined && query.squad === undefined ) {
+    return arr.find(val => val.id === query.id);
+  } else if ( query.id !== undefined && query.name !== undefined && query.squad === undefined ) {
+    return arr.find(val => val.id === query.id && val.name === query.name);
+  } else if ( query.id !== undefined && query.name !== undefined && query.squad !== undefined ) {
+    return arr.find(val => val.id === query.id && val.name === query.name && val.squad === query.squad);
   }
-  return null;
 }
 
-let findHero = findOne( heroes, { id: 3 });
+let findHero = findOne( heroes, { id: 4, name: 'Superman' });
 console.log(findHero);
