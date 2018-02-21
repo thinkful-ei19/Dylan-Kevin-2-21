@@ -37,17 +37,20 @@ const mealObj = {
 
 const person1 = {
     name: 'Bill',
-    jobTitle: 'Janitor'
+    jobTitle: 'Janitor',
+    boss: 'Jenny'
 };
 
 const person2 = {
     name: 'Ted',
-    jobTitle: 'pilot'
+    jobTitle: 'pilot',
+    boss: 'Jenny'
 };
 
 const person3 = {
     name: 'Alfred',
-    jobTitle: 'Web Dev'
+    jobTitle: 'Web Dev',
+    boss: 'Jenny'
 };
 
 const person4 = {
@@ -57,4 +60,10 @@ const person4 = {
 
 const personArray = [person1, person2, person3, person4];
 
-personArray.forEach(obj => console.log(`${obj.name}: ${obj.jobTitle}`));
+personArray.forEach(obj => {
+    if (obj.boss) {
+        console.log(`${obj.jobTitle} ${obj.name} reports to ${obj.boss}`);
+    } else {
+        console.log(`${obj.jobTitle} ${obj.name} reports to NO ONE`);
+    }
+});
