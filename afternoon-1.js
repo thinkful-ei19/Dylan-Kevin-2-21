@@ -8,7 +8,18 @@ const loaf = {
     }
 };
 
-console.log(loaf.flour, loaf.water);
+// console.log(loaf.flour, loaf.water);
 
-console.log(loaf.hydration());
+// console.log(loaf.hydration());
 
+const obj = {
+    foo: 'cool',
+    bar: 'dull',
+    fum: 'alright',
+    quux: 'sweet',
+    spam: 'bitter'
+}
+
+for (let key in obj) {
+    console.log(key, obj[key]);
+}
