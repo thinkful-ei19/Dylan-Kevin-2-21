@@ -21,5 +21,14 @@ const obj = {
 }
 
 for (let key in obj) {
-    console.log(key, obj[key]);
+    // console.log(key, obj[key]);
 }
+/////////////////
+
+const mealObj = {
+    meal: [
+        'breakfast', 'second breakfast', 'elevenses', 'lunch', 'afternoon tea', 'dinner', 'supper'
+    ]
+};
+
+console.log(mealObj.meal[3]);
